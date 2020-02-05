@@ -98,9 +98,49 @@ body {
     transform-origin: 50% 0;
     transform: translate(-44px, 0) rotate(10deg);
     box-shadow: 1px 0px 0px 0px #000 inset, -1px 0px 5px 1px #dddddd;
+    /* 隐藏移除的眼球部分 */
+    overflow: hidden; 
 }
 
 .eye.right {
     transform: scale(-1,1) translate(-21px, 0) rotate(10deg); 
     box-shadow: 1px 0px 0px 0px #000 inset;
+}
+
+.pupil {
+    width: 26px;
+    height: 26px;
+    background: #e79101;
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    /* （左右）（上下） 模糊度 长度 颜色 内 */
+    box-shadow: 0 0 8px 0 #000 inset;
+}
+
+/* 眼球黑部分 */
+.pupil:before {
+    width:18px;
+    height: 18px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    /* 需要有空内容，否则不显示 */
+    content: '';
+    transform: translate(-50%, -50%);
+}
+
+/* 眼球白部分 */
+.pupil:after {
+    width: 7px;
+    height: 7px;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    top:5px;
+    left: 2px;
 }
