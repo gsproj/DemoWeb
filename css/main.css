@@ -67,7 +67,40 @@ body {
     transform: translate(-42px,0) rotate(10deg);
 }
 
-.right {
+.ear.right {
     /* scale(-1, 1)翻转?为什么要写在最前面 */
     transform:  scale(-1,1) translate(-26px, 0) rotate(10deg); 
+}
+
+/* 眼影胎记 */
+.birthmark {
+    width: 30px;
+    height: 36px;
+    background: var(--hl);
+    border-radius: 15px / 17px 23px 2px 13px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 10px;
+    transform: translate(16px, 0) rotate(-11deg);
+}
+
+/* 眼睛轮廓 */
+.eye {
+    width: 24px;
+    height: 24px;
+    background: var(--bg);
+    border-radius: 12px / 13px 12px 12px 2px;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 20px;
+    transform-origin: 50% 0;
+    transform: translate(-44px, 0) rotate(10deg);
+    box-shadow: 1px 0px 0px 0px #000 inset, -1px 0px 5px 1px #dddddd;
+}
+
+.eye.right {
+    transform: scale(-1,1) translate(-21px, 0) rotate(10deg); 
+    box-shadow: 1px 0px 0px 0px #000 inset;
 }
