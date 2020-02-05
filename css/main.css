@@ -2,6 +2,7 @@
 :root {
     --hl: #1b2f90;
     --bg: #f9f9f6;
+    --time: 2s;
 }
 
 /* 整体背景颜色 */
@@ -14,7 +15,6 @@ body {
     width: 300px;
     height: 400px;
     position: relative;
-    background: #666666;
 }
 
 .center {
@@ -65,11 +65,13 @@ body {
     top: 34px;
     transform-origin: 50% 0;
     transform: translate(-42px,0) rotate(10deg);
+    animation: ear-animate var(--time) ease-out infinite;
 }
 
 .ear.right {
     /* scale(-1, 1)翻转?为什么要写在最前面 */
-    transform:  scale(-1,1) translate(-26px, 0) rotate(10deg); 
+    transform: scale(-1,1) translate(-26px, 0) rotate(10deg); 
+    animation: ear-animate-r var(--time) ease-out infinite;
 }
 
 /* 眼影胎记 */
@@ -117,6 +119,7 @@ body {
     top: 1px;
     /* （左右）（上下） 模糊度 长度 颜色 内 */
     box-shadow: 0 0 8px 0 #000 inset;
+    animation: eye-animate var(--time) ease-out infinite;
 }
 
 /* 眼球黑部分 */
@@ -182,6 +185,7 @@ body {
     background: linear-gradient(0deg, #363035 0%, #000 100%);
     border-radius: 50%;
     transform: translate(-21px, 0) rotate(30deg);
+    animation: nose-animate var(--time) ease-out infinite;
 }
 
 .nostril.right {
@@ -197,6 +201,8 @@ body {
     top: 68px;
     border-radius: 34px / 0px 0px 27px 27px;
     box-shadow: 0px 0px 5px 0px #000 inset;
+    animation: mouth-animate var(--time) ease-out infinite;
+
 }
 
 .mouth:before {
@@ -235,6 +241,7 @@ body {
     box-shadow: 0 0 4px 0 #000 inset;
     top: 6px;
     z-index: 1;
+    animation: tongue-animate var(--time) ease-out infinite;
 }
 
 /* 手臂和身体 */
@@ -310,4 +317,39 @@ body {
     z-index: 2;
 }
 
+@keyframes ear-animate{
+    0% {transform: translate(-42px,0) rotate(10deg);}
+    50% {transform: translate(-42px,0) rotate(25deg);}
+    100% {transform: translate(-42px,0) rotate(10deg);}
+}
+
+@keyframes ear-animate-r{
+    0% {transform: scale(-1,1) translate(-26px, 0) rotate(10deg); }
+    50% {transform: scale(-1,1) translate(-26px, 0) rotate(25deg); }
+    100% {transform: scale(-1,1) translate(-26px, 0) rotate(10deg); }
+}
+
+@keyframes eye-animate {
+    0% {left: 3px;}
+    50% {left: 5px;}
+    100% {left: 3px;}
+}
+
+@keyframes nose-animate {
+    0% {height: 4px;}
+    50% {height: 5px;}
+    100% {height: 4px;}
+}
+
+@keyframes tongue-animate {
+    0% {height: 14px;}
+    50% {height: 25px;}
+    100% {height: 14px;}
+}
+
+@keyframes mouth-animate {
+    0% {height: 27px;}
+    50% {height: 20px;}
+    100% {height: 27px;}
+}
 
