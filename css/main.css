@@ -237,4 +237,41 @@ body {
     z-index: 1;
 }
 
+/* 手臂和身体 */
+.body {
+    width: 66px;
+    height: 70px;
+    background: var(--bg);
+    border-radius: 50%;
+    top: 90px;
+}
+
+.arm {
+    width: 26px;
+    height: 40px;
+    background: var(--bg);
+    position: absolute;
+    border-radius: 13px / 20px 0px 14px 20px;
+    transform: rotate(15deg);
+    left: -10px;
+}
+
+.arm::before {
+    width: 8px;
+    height: 20px;
+    background: var(--ba);
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 14px;
+    right: 6px;
+    box-shadow: -1px 0px 0px 0px rgba(200,200,200, 0.5);
+    border-radius: 12px / 12px 12px 12px 12px;
+}
+
+.arm.right {
+    transform: scale(-1, 1) translate(-60px, 0) rotate(15deg);;
+}
+
+
 
