@@ -169,6 +169,7 @@ body {
     content: '';
     /* 鼻头渐变色 */
     background: linear-gradient(30deg, #fff 0%, #fff 8%, #b1aeb1 15%, #544d53 100%);
+
 }
 
 /* 鼻孔 */
@@ -205,6 +206,35 @@ body {
     content: '';
     border-radius: 34px / 0px 0px 5px 5px;
     position: absolute;
+    z-index: 2;
+}
+
+/* 牙齿和舌头 */
+.teen {
+    width: 8px;
+    height: 3px;
+    background: var(--bg);
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translate(-8px, 0);
+    border-radius: 12px / 0px 0px 5px 12px;
+    border-right: .5px solid #ddd;
+    z-index: 3;
+}
+
+.teen.right {
+    transform: scale(-1, 1) translate(0px, 0px);
+}
+
+.tongue {
+    width: 34px;
+    height: 14px;
+    background: #a2504f;
+    border-radius: 17px / 0px 0px 27px 27px;
+    box-shadow: 0 0 4px 0 #000 inset;
+    top: 6px;
+    z-index: 1;
 }
 
 
