@@ -144,3 +144,48 @@ body {
     top:5px;
     left: 2px;
 }
+
+/* 鼻子部分 */
+.nose {
+    width: 62px;
+    height: 32px;
+    top: 42px;
+    background: #363035;
+    position: absolute;
+    border-radius: 31px / 10px 10px 22px 22px;
+    z-index: 1;
+}
+
+/* 鼻子上的白色部分 */
+.nose::before {
+    width: 60px;
+    height: 10px;
+    left: 50%;
+    top: 1px;
+    transform: translate(-50%, 0);
+    background: #fff;
+    position: absolute;
+    border-radius: 30px / 8px 8px 2px 2px;
+    content: '';
+    /* 鼻头渐变色 */
+    background: linear-gradient(30deg, #fff 0%, #fff 8%, #b1aeb1 15%, #544d53 100%);
+}
+
+/* 鼻孔 */
+.nostril {
+    width: 15px;
+    height: 4px;
+    position: absolute;
+    top: 19px;
+    left: 50%;
+    background: linear-gradient(0deg, #363035 0%, #000 100%);
+    border-radius: 50%;
+    transform: translate(-21px, 0) rotate(30deg);
+}
+
+.nostril.right {
+    transform: scale(-1,1) translate(-6px, 0) rotate(30deg);;
+}
+
+
+
